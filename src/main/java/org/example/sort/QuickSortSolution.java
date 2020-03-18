@@ -8,13 +8,13 @@ public class QuickSortSolution {
 
     public static void main(String[] args) {
 
-        int array[] = new int[]{2, 31, 4, 9, 21, 31, 88, 7};
+        int array[] = new int[]{2, 31, 4, 9, 21, 31, 88, 7, 10, 6, 11};
         quickSort(array, 0, array.length - 1);
         for (int value : array) {
             System.out.println(value);
         }
-    }
 
+    }
 
     private static void quickSort(int[] arr, int low, int high) {
 
@@ -22,7 +22,7 @@ public class QuickSortSolution {
             // 找寻基准数据的正确索引
             int index = getIndex(arr, low, high);
             // 进行迭代对index之前和之后的数组进行相同的操作使整个数组变成有序
-            quickSort(arr, 0, index - 1);
+            quickSort(arr, 0, index);
             quickSort(arr, index + 1, high);
         }
 

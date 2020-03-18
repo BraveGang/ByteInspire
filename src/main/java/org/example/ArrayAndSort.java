@@ -10,8 +10,9 @@ public class ArrayAndSort {
 
     public static void main(String[] args) {
 
-    }
+       // Arrays.sort(new int[100]);
 
+    }
 
     /**
      * 给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，
@@ -20,7 +21,6 @@ public class ArrayAndSort {
     public List<List<Integer>> threeSum(int[] nums) {
 
         return null;
-
     }
 
     /**

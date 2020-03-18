@@ -1,7 +1,5 @@
 package org.example.sort;
 
-import java.util.Arrays;
-
 /**
  * 插入排序
  * 时间复杂度：n2
@@ -10,7 +8,7 @@ public class InsertSortSolution {
 
     public static void main(String[] args) {
         int array[] = new int[]{2, 31, 4, 9, 21, 31, 88, 7};
-        insertSort(array);
+        insertSort2(array);
         for (int value : array) {
             System.out.println(value);
         }
