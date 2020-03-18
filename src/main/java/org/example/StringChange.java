@@ -14,13 +14,23 @@ public class StringChange {
 
         System.out.println(lengthOfLongestSubstring("hdfasldflkasjdfljalsdf"));
 
-        String strs[] = new String[]{"fla", "flo", "flow","flw"};
+        System.out.println("==========");
+
+        String strs[] = new String[]{"fla", "flo", "flow", "flw"};
         System.out.println(longestCommonPrefix(strs));
+
+        System.out.println("==========");
 
         String str = "how old are you!";
         System.out.println(reverseWords(str));
 
+        System.out.println("==========");
 
+        String ipStr = "25525511135";
+        List<String> stringList = restoreIpAddresses(ipStr);
+        for (String s : stringList) {
+            System.out.println(s);
+        }
 
     }
 
@@ -46,9 +56,7 @@ public class StringChange {
                 i++;
             }
         }
-
         return max;
-
     }
 
 
@@ -67,7 +75,6 @@ public class StringChange {
 
         String str = strs[0];
         for (String s : strs) {
-
             while (s.indexOf(str) != 0) {
                 str = str.substring(0, str.length() - 1);
                 if (str.length() == 0) {
@@ -140,60 +147,45 @@ public class StringChange {
     /**
      * 给定一个只包含数字的字符串，复原它并返回所有可能的 IP 地址格式。
      */
-    public List<String> restoreIpAddresses(String s) {
+    public static List<String> restoreIpAddresses(String s) {
 
-        List<String> res = new ArrayList<>();
-        if (s.length() == 0) {
-            return res;
-        }
-        generateIpAddresses("", s, res);
-        return res;
+        char[] chars = s.toCharArray();
+        List<String> list = new ArrayList<>();
+        check(list, chars, "", 0, 0);
+        return list;
 
     }
 
-
-    private void generateIpAddresses(String ipAddress, String s, List<String> res) {
-
-        int n = 0;
-        for (int i = 0; i < ipAddress.length(); i++) {
-            if (ipAddress.charAt(i) == '.') {
-                n++;
-            }
-        }
-
-        if (n == 3) {
-
-            if (ipAddress.length() - 3 < s.length()) {
-                String lastString = s.substring(ipAddress.length() - 3);
-                if (lastString.length() >= 4) {
-                    return;
+    public static void check(List<String> list, char[] chars, String str, int index, int count) {
+        if (count == 4) {
+            str = str.substring(0, str.length() - 1); //将最后一个.符号去掉
+            if (index == chars.length) {
+                String[] s = str.split("[.]");
+                for (String num : s) {
+                    if (Integer.valueOf(num) > 255) {
+                        return;
+                    }
                 }
-
-                if (lastString.length() != 1 && lastString.charAt(0) == '0') {
-                    return;
-                }
-
-                if (Integer.valueOf(lastString) >= 0 && Integer.valueOf(lastString) <= 255) {
-                    res.add(ipAddress + lastString);
-                }
-
+                list.add(str);
             }
             return;
         }
 
-        String[] nextString = new String[3];
+        String t = str;
+
         for (int i = 0; i < 3; i++) {
-            if (ipAddress.length() - n + i + 1 <= s.length()) {
-                nextString[i] = s.substring(ipAddress.length() - n, ipAddress.length() - n + i + 1);
-                if (nextString[i].length() != 1 && nextString[i].charAt(0) == '0') {
-                    continue;
-                }
-                if (Integer.valueOf(nextString[i]) >= 0 && Integer.valueOf(nextString[i]) <= 255) {
-                    generateIpAddresses(ipAddress + nextString[i] + ".", s, res);
-                }
+            if (index + i >= chars.length) {
+                return;
             }
+
+            t = t + chars[index + i];
+            //递归调用
+            check(list, chars, t + ".", index + i + 1, count + 1);
+            if (i == 0 && chars[index + i] == '0') {//如果开头为0，不能往下执行
+                return;
+            }
+
         }
     }
 
 }
-
