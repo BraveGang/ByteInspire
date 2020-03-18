@@ -6,6 +6,23 @@ package org.example.sort;
  */
 public class MergeSortSolution {
 
+
+    public static void main(String[] args) {
+
+        int array[] = new int[]{2, 31, 4, 9, 21, 31, 88, 7};
+        int result[] = mergeSort(array, 0, array.length - 1);
+
+        for (int value : array) {
+            System.out.println(value);
+        }
+
+        System.out.println("==========");
+
+        for (int value : result) {
+            System.out.println(value);
+        }
+    }
+
     private static int[] mergeSort(int[] nums, int low, int high) {
 
         if (low == high) {

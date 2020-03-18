@@ -1,12 +1,19 @@
 package org.example.sort;
 
 /**
- *
  * 快速排序
  * 时间复杂度：nlogn
- *
  */
 public class QuickSortSolution {
+
+    public static void main(String[] args) {
+
+        int array[] = new int[]{2, 31, 4, 9, 21, 31, 88, 7};
+        quickSort(array, 0, array.length - 1);
+        for (int value : array) {
+            System.out.println(value);
+        }
+    }
 
 
     private static void quickSort(int[] arr, int low, int high) {

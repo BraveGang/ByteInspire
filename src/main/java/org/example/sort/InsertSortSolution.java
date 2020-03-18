@@ -8,6 +8,14 @@ import java.util.Arrays;
  */
 public class InsertSortSolution {
 
+    public static void main(String[] args) {
+        int array[] = new int[]{2, 31, 4, 9, 21, 31, 88, 7};
+        insertSort(array);
+        for (int value : array) {
+            System.out.println(value);
+        }
+    }
+
     private static int[] insertSort(int[] arr) {
 
         if (arr == null || arr.length < 2) {
