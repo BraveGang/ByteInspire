@@ -5,11 +5,10 @@ package org.example.helper;
  */
 public class ListNode {
 
-    int val;
-    ListNode next;
+    public int value;
+    public ListNode next;
 
     ListNode(int x) {
-        val = x;
+        value = x;
     }
-
 }

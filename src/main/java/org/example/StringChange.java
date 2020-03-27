@@ -9,24 +9,17 @@ import java.util.List;
  */
 public class StringChange {
 
-
     public static void main(String[] args) {
 
         System.out.println(lengthOfLongestSubstring("hdfasldflkasjdfljalsdf"));
-
         System.out.println("==========");
-
         String strs[] = new String[]{"fla", "flo", "flow", "flw"};
         System.out.println(longestCommonPrefix(strs));
-
         System.out.println("==========");
-
         String str = "how old are you!";
         System.out.println(reverseWords(str));
-
         System.out.println("==========");
-
-        String ipStr = "25525511135";
+        String ipStr = "1981216176";
         List<String> stringList = restoreIpAddresses(ipStr);
         for (String s : stringList) {
             System.out.println(s);
@@ -34,14 +27,13 @@ public class StringChange {
 
     }
 
-
     /**
      * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
      * 时间复杂度o(n)
      * 思路：快慢指针法（前提是"字符串"）
      */
     public static int lengthOfLongestSubstring(String s) {
-        //2 3 4 5 6 4 3 2 1
+        //2 3 4 5 6 4 4 3 2 1
         int[] hash = new int[500];
         int max = 0;
         int i = 0, j = 0;
@@ -72,7 +64,6 @@ public class StringChange {
         if (strs.length == 0) {
             return "";
         }
-
         String str = strs[0];
         for (String s : strs) {
             while (s.indexOf(str) != 0) {
@@ -83,7 +74,6 @@ public class StringChange {
             }
         }
         return str;
-
     }
 
     /**
@@ -145,9 +135,9 @@ public class StringChange {
 
 
     /**
-     * 给定一个只包含数字的字符串，复原它并返回所有可能的 IP 地址格式。
+     * 给定一个只包含数字的字符串，复原它并返回所有可能的 IP 地址格式：递归方案实现
      */
-    public static List<String> restoreIpAddresses(String s) {
+    private static List<String> restoreIpAddresses(String s) {
 
         char[] chars = s.toCharArray();
         List<String> list = new ArrayList<>();
@@ -156,7 +146,7 @@ public class StringChange {
 
     }
 
-    public static void check(List<String> list, char[] chars, String str, int index, int count) {
+    private static void check(List<String> list, char[] chars, String str, int index, int count) {
         if (count == 4) {
             str = str.substring(0, str.length() - 1); //将最后一个.符号去掉
             if (index == chars.length) {
@@ -186,6 +176,51 @@ public class StringChange {
             }
 
         }
+    }
+
+
+    /**
+     * 给定一个字符串、复原肯能的IP地址：遍历方案实现
+     *
+     * @param s
+     * @return
+     */
+    public static ArrayList<String> restoreIpAddresses2(String s) {
+
+        ArrayList<String> result = new ArrayList<>();
+        int len = s.length();
+
+        if (len == 0 || len > 12) {
+            return null;
+        }
+
+        for (int i = 1; i < 4 && i < len - 2; i++) {
+            for (int j = i + 1; j < i + 4 && j < len - 1; j++) {
+                for (int k = j + 1; k < j + 4 && k < len; k++) {
+                    if (len - k >= 4) {
+                        continue;//判断字符串 是否有剩余
+                    }
+
+                    int a = Integer.parseInt(s.substring(0, i));
+                    int b = Integer.parseInt(s.substring(i, j));
+                    int c = Integer.parseInt(s.substring(j, k));
+                    int d = Integer.parseInt(s.substring(k));
+
+                    if (a > 255 || b > 255 || c > 255 || d > 255) {
+                        continue;
+                    }
+
+                    String ip = a + "." + b + "." + c + "." + d;
+
+                    if (ip.length() < len + 3)
+                        continue;
+
+                    result.add(ip);
+
+                }
+            }
+        }
+        return result;
     }
 
 }

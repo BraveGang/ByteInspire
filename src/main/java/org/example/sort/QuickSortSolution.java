@@ -1,8 +1,10 @@
 package org.example.sort;
 
 /**
+ *
  * 快速排序
  * 时间复杂度：nlogn
+ *
  */
 public class QuickSortSolution {
 
@@ -51,6 +53,5 @@ public class QuickSortSolution {
         arr[low] = tmp;
         return low; // 返回tmp的正确位置
     }
-
 
 }
