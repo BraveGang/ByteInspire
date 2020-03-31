@@ -1,7 +1,7 @@
 package org.example;
 
-import org.example.helper.ListNode;
-import org.example.helper.TreeNode;
+import org.example.node.ListNode;
+import org.example.node.TreeNode;
 
 import java.util.List;
 
@@ -15,25 +15,6 @@ public class LinkAndTree {
     }
 
     /**
-     * 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
-     */
-    //递归问题
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-
-        if (l1 == null) {
-            return l2;
-        } else if (l2 == null) {
-            return l1;
-        } else if (l1.value < l2.value) {
-            l1.next = mergeTwoLists(l1.next, l2);
-            return l1;
-        } else {
-            l2.next = mergeTwoLists(l1, l2.next);
-            return l2;
-        }
-    }
-
-    /**
      * 反转一个单链表。
      */
     public ListNode reverseList(ListNode head) {
@@ -42,7 +23,7 @@ public class LinkAndTree {
     }
 
     /**
-     * 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
+     * 给出两个非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
      * 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
      * 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
      */

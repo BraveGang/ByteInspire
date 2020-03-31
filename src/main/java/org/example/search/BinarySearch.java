@@ -39,10 +39,13 @@ public class BinarySearch {
     }
 
     /**
+     *
      * 二分查找-循环遍历法
+     * 推荐使用：Java源码二分查找就是用的while循环法
      * @param arr
      * @param key
      * @return
+     *
      */
     public static int commonBinarySearch(int[] arr, int key) {
 
@@ -66,6 +69,6 @@ public class BinarySearch {
             }
         }
 
-        return -1;        //最后仍然没有找到，则返回-1
+        return -1; //最后仍然没有找到，则返回-1
     }
 }
