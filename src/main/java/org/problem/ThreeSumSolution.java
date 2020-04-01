@@ -15,7 +15,7 @@ public class ThreeSumSolution {
         List<List<Integer>> lists = directlySolution(nums);
         List<List<Integer>> lists2 = squeezeSolution(nums);
 
-    }
+}
 
     /**
      * 暴力解法：三层for循环遍历实现

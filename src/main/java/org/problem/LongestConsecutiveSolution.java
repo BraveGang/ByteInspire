@@ -4,9 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
+ *
  * 最长连续序列
  * 给定一个未排序的整数数组，找出最长连续序列的长度。
  * 要求算法的时间复杂度为 O(n)
+ *
  */
 public class LongestConsecutiveSolution {
 
@@ -15,7 +17,6 @@ public class LongestConsecutiveSolution {
         // [100, 4, 200, 1, 3, 2]
         int[] nums = new int[]{100, 4, 200, 1, 3, 2};
         System.out.println(longestConsecutive(nums));
-
     }
 
 
@@ -43,6 +44,5 @@ public class LongestConsecutiveSolution {
         }
         return longestStreak;
     }
-
 
 }

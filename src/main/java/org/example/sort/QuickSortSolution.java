@@ -48,6 +48,7 @@ public class QuickSortSolution {
             arr[high] = arr[low];
 
         }
+
         // 跳出循环时low和high相等,此时的low或high就是tmp的正确索引位置
         // 由原理部分可以很清楚的知道low位置的值并不是tmp,所以需要将tmp赋值给arr[low]
         arr[low] = tmp;

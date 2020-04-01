@@ -14,12 +14,14 @@ public class StringChange {
 
 
     /**
+     *
      * 给定两个字符串 s1 和 s2，写一个函数来判断 s2 是否包含 s1 的排列。
      * 换句话说，第一个字符串的排列之一是第二个字符串的子串。
      *
      * @param s1
      * @param s2
      * @return
+     *
      */
     public static boolean checkInclusion(String s1, String s2) {
         //面试的时候不能这样写哈
