@@ -14,13 +14,6 @@ public class LinkAndTree {
 
     }
 
-    /**
-     * 反转一个单链表。
-     */
-    public ListNode reverseList(ListNode head) {
-
-        return null;
-    }
 
     /**
      * 给出两个非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
@@ -33,6 +26,7 @@ public class LinkAndTree {
     }
 
     /**
+     * 排序链表
      * 在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
      */
     public ListNode sortList(ListNode head) {
