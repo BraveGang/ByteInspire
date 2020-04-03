@@ -24,6 +24,7 @@ public class MergeSortSolution {
     }
 
     /**
+     *
      * 默认为升序排列 ASC
      *
      * @param nums
@@ -31,7 +32,8 @@ public class MergeSortSolution {
      * @param high
      * @return
      */
-    private static int[] mergeSort(int[] nums, int low, int high) {
+    public static int[] mergeSort(int[] nums, int low, int high) {
+
         if (low == high) {
             return new int[]{nums[low]};
         }
@@ -53,7 +55,14 @@ public class MergeSortSolution {
         return newNum;
     }
 
-
+    /**
+     * 降序排列
+     *
+     * @param nums
+     * @param low
+     * @param high
+     * @return
+     */
     public static int[] mergeSortDesc(int[] nums, int low, int high) {
 
         if (low == high) {
@@ -79,7 +88,7 @@ public class MergeSortSolution {
 
 
     //方法2
-    private static void mergeSort2(int[] arr) {
+    public static void mergeSort2(int[] arr) {
         sort(arr, 0, arr.length - 1);
     }
 

@@ -25,14 +25,6 @@ public class LinkAndTree {
         return null;
     }
 
-    /**
-     * 排序链表
-     * 在 O(n log n) 时间复杂度和常数级空间复杂度下，对链表进行排序。
-     */
-    public ListNode sortList(ListNode head) {
-
-        return null;
-    }
 
     /**
      * 给定一个链表，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。
@@ -50,14 +42,6 @@ public class LinkAndTree {
      * 编写一个程序，找到两个单链表相交的起始节点。
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-
-        return null;
-    }
-
-    /**
-     * 合并 k 个排序链表，返回合并后的排序链表。请分析和描述算法的复杂度。
-     */
-    public ListNode mergeKLists(ListNode[] lists) {
 
         return null;
     }

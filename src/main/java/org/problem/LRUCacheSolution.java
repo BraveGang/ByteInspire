@@ -6,7 +6,8 @@ import java.util.LinkedList;
 /**
  *
  * 实现LRU
- * HashMap + LinkedList 构造一个LRU
+ * HashMap + LinkedList 方法构造一个LRU
+ * 还有其他解法
  *
  */
 public class LRUCacheSolution {

@@ -2,8 +2,6 @@ package org.problem.linked;
 
 import org.example.node.ListNode;
 
-import java.util.List;
-
 /**
  * 反转一个单链表
  */
@@ -20,14 +18,14 @@ public class ReverseListSolution {
         node2.next = node3;
         node3.next = node4;
 
-        ListNode resultNode = reverseList(node1);
+        //ListNode resultNode = reverseList(node1);
+        ListNode resultNode = reverseList2(node1);
         MergeTwoListsSolution.printListFromHeadToTail(resultNode);
 
     }
 
     /**
      * 递归方式
-     *
      * @param head
      * @return
      */
@@ -36,6 +34,7 @@ public class ReverseListSolution {
         if (head == null || head.next == null) {
             return head;
         }
+
         ListNode node = reverseList(head.next);
         head.next.next = head;
         head.next = null;
