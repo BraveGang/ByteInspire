@@ -9,7 +9,7 @@ public class ProducerConsumer01 {
 
     private static Integer count = 0;
     private static final Integer FULL = 10;
-    private static final String LOCK = "lock";
+    private static final Object LOCK = new Object();
 
 
     class Producer implements Runnable {

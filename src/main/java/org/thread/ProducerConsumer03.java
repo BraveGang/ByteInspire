@@ -10,8 +10,8 @@ import java.util.concurrent.BlockingQueue;
 public class ProducerConsumer03 {
 
 
-    private static Integer count = 0;
-    private final BlockingQueue blockingQueue = new ArrayBlockingQueue<>(10);
+    public static Integer count = 0;
+    public final BlockingQueue blockingQueue = new ArrayBlockingQueue<>(10);
 
     class Producer implements Runnable {
 
