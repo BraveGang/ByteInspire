@@ -7,11 +7,7 @@ public class StringChange {
 
     public static void main(String[] args) {
 
-        String str = "how old are you!";
-        System.out.println(reverseWords(str));
-
     }
-
 
     /**
      *
@@ -26,11 +22,7 @@ public class StringChange {
     public static boolean checkInclusion(String s1, String s2) {
         //面试的时候不能这样写哈
         //leetcode 有对应的题解
-        if (s2.contains(s1)) {
-            return true;
-        } else {
-            return false;
-        }
+        return s2.contains(s1);
 
     }
 
@@ -48,22 +40,6 @@ public class StringChange {
 
     }
 
-    /**
-     * 给定一个字符串，逐个翻转字符串中的每个单词。
-     */
-    public static String reverseWords(String s) {
-
-        String arrayStr[] = s.split(" ");
-        StringBuffer stringBuffer = new StringBuffer();
-        for (int i = arrayStr.length - 1; i >= 0; i--) {
-            stringBuffer.append(arrayStr[i]);
-            if (i - 1 >= 0) {
-                stringBuffer.append(" ");
-            }
-        }
-        String str = stringBuffer.toString();
-        return str;
-    }
 
     /**
      * 以 Unix 风格给出一个文件的绝对路径，你需要简化它。或者换句话说，将其转换为规范路径。
