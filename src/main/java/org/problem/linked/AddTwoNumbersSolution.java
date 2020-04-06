@@ -1,6 +1,6 @@
 package org.problem.linked;
 
-import org.example.node.ListNode;
+import org.helper.ListNode;
 
 
 /**

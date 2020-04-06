@@ -1,4 +1,4 @@
-package org.example.node;
+package org.helper;
 
 /**
  * 链表

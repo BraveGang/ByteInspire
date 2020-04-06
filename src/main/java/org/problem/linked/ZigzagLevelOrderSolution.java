@@ -1,6 +1,6 @@
 package org.problem.linked;
 
-import org.example.node.TreeNode;
+import org.helper.TreeNode;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

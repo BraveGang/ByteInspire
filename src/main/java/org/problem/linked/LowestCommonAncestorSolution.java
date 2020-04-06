@@ -1,7 +1,7 @@
 package org.problem.linked;
 
 
-import org.example.node.TreeNode;
+import org.helper.TreeNode;
 
 /**
  * 二叉树的最近公共祖先
