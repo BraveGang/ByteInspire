@@ -1,4 +1,4 @@
-package org.problem;
+package org.problem.dynamic;
 
 /**
  * 最大子序和
@@ -15,6 +15,8 @@ public class MaxSubArraySolution {
     }
 
     /**
+     *
+     * 动态规划
      * @param nums
      * @return
      */

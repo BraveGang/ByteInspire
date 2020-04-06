@@ -1,4 +1,4 @@
-package org.problem;
+package org.problem.string;
 
 /**
  * 验证IP地址（美团一面的算法题，为了降低难度，当时仅考察IPv4）

@@ -1,4 +1,4 @@
-package org.example.sort;
+package org.problem.sort;
 
 /**
  * 插入排序

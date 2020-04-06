@@ -1,4 +1,4 @@
-package org.problem;
+package org.problem.structure;
 
 import java.util.HashMap;
 import java.util.LinkedList;

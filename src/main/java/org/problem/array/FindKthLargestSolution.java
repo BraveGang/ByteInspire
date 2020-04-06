@@ -1,11 +1,13 @@
-package org.problem;
+package org.problem.array;
 
-import org.example.sort.MergeSortSolution;
+import org.problem.sort.MergeSortSolution;
 
 /**
  * 数组中的第K 个最大元素
  * 在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
  * 先对数组进行降序排列  然后取下标k-1
+ *
+ *  考察点：排序
  */
 public class FindKthLargestSolution {
 

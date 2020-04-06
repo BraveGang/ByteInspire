@@ -26,6 +26,7 @@ public class ReverseListSolution {
 
     /**
      * 递归方式
+     *
      * @param head
      * @return
      */
@@ -34,7 +35,7 @@ public class ReverseListSolution {
         if (head == null || head.next == null) {
             return head;
         }
-
+        
         ListNode node = reverseList(head.next);
         head.next.next = head;
         head.next = null;

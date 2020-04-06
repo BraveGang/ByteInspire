@@ -64,7 +64,7 @@ public class SortListSolution {
 
         while (left != null && right != null) {
 
-            if (left.value < right.value) {
+            if (left.val < right.val) {
                 h.next = left;
                 left = left.next;
             } else {

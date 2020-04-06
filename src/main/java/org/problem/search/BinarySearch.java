@@ -1,4 +1,4 @@
-package org.example.search;
+package org.problem.search;
 
 /**
  * 二分查找
@@ -12,8 +12,8 @@ public class BinarySearch {
     }
 
     /**
-     *
      * 二分查找-递归法
+     *
      * @param arr
      * @param key
      * @param low
@@ -39,20 +39,19 @@ public class BinarySearch {
     }
 
     /**
-     *
      * 二分查找-循环遍历法
      * 推荐使用：Java源码二分查找就是用的while循环法
+     *
      * @param arr
      * @param key
      * @return
-     *
      */
     public static int commonBinarySearch(int[] arr, int key) {
 
         int low = 0;
         int high = arr.length - 1;
         int middle = 0;            //定义middle
-        if (key < arr[low] || key > arr[high] || low > high) {
+        if (key < arr[low] || key > arr[high]) {
             return -1;
         }
 

@@ -1,6 +1,6 @@
-package org.problem;
+package org.problem.array;
 
-import org.example.sort.MergeSortSolution;
+import org.problem.sort.MergeSortSolution;
 
 /**
  * 获取一个无需数组的中位数

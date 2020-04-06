@@ -46,7 +46,7 @@ public class PrintLinkedListFromTailToHead {
     public static void printListFromTailToHeadByStack(ListNode node) {
         Stack<Integer> stack = new Stack<>();
         while (node != null) {
-            stack.push(node.value);
+            stack.push(node.val);
             node = node.next;
         }
         while (!stack.isEmpty()) {
@@ -65,7 +65,7 @@ public class PrintLinkedListFromTailToHead {
             if (node.next != null) {
                 printListFromTailToHead(node.next);
             }
-            System.out.print(node.value + ",");
+            System.out.print(node.val + ",");
         } else {
             System.out.println("输入的链表为空");
         }
@@ -86,7 +86,7 @@ public class PrintLinkedListFromTailToHead {
         List<Integer> arrayList = new ArrayList<>();
 
         while (node != null) {
-            arrayList.add(node.value);
+            arrayList.add(node.val);
             node = node.next;
         }
 
@@ -105,7 +105,7 @@ public class PrintLinkedListFromTailToHead {
     public static void printListFromTailToHeadByReverseList(ListNode node) {
         ListNode reversedNode = reverse(node);
         while (reversedNode != null) {
-            System.out.print(reversedNode.value + ",");
+            System.out.print(reversedNode.val + ",");
             reversedNode = reversedNode.next;
         }
     }

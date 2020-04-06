@@ -31,7 +31,7 @@ public class MergeKListsSolution {
         PriorityQueue<ListNode> queue = new PriorityQueue<>(lists.length, new Comparator<ListNode>() {
             @Override
             public int compare(ListNode o1, ListNode o2) {
-                return Integer.compare(o1.value, o2.value);
+                return Integer.compare(o1.val, o2.val);
             }
         });
 
@@ -54,13 +54,11 @@ public class MergeKListsSolution {
 
 
     /**
-     *
      * 分而治之
      * 链表两两合并
      * <p>
      * 时间复杂度：O(Nlogk) ，其中 k 是链表的数目。
      * 空间复杂度：O(1)
-     *
      */
     public static ListNode mergeKLists2(ListNode[] lists) {
 
@@ -74,7 +72,7 @@ public class MergeKListsSolution {
         int mid = left + (right - left) / 2;
         ListNode l1 = merge(lists, left, mid);
         ListNode l2 = merge(lists, mid + 1, right);
-        return mergeTwoLists(l1, l2);
+        return MergeTwoListsSolution.mergeTwoLists(l1, l2);
 
     }
 
@@ -82,7 +80,7 @@ public class MergeKListsSolution {
 
         if (l1 == null) return l2;
         if (l2 == null) return l1;
-        if (l1.value < l2.value) {
+        if (l1.val < l2.val) {
             l1.next = mergeTwoLists(l1.next, l2);
             return l1;
         } else {

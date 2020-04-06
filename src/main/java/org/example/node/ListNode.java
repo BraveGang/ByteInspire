@@ -5,14 +5,14 @@ package org.example.node;
  */
 public class ListNode {
 
-    public int value;
+    public int val;
     public ListNode next;
 
     public ListNode() {
     }
     
     public ListNode(int x) {
-        value = x;
+        val = x;
     }
 
 

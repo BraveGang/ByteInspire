@@ -45,7 +45,7 @@ public class MergeTwoListsSolution {
             return l2;
         } else if (l2 == null) {
             return l1;
-        } else if (l1.value < l2.value) {
+        } else if (l1.val < l2.val) {
             l1.next = mergeTwoLists(l1.next, l2);
             return l1;
         } else {
@@ -69,7 +69,7 @@ public class MergeTwoListsSolution {
         ListNode prev = prehead;
         //循环输出
         while (l1 != null && l2 != null) {
-            if (l1.value <= l2.value) {
+            if (l1.val <= l2.val) {
                 prev.next = l1;
                 l1 = l1.next;
             } else {
@@ -88,7 +88,7 @@ public class MergeTwoListsSolution {
     public static void printListFromHeadToTail(ListNode node) {
 
         if (node != null) {
-            System.out.print(node.value + " ");
+            System.out.print(node.val + " ");
             printListFromHeadToTail(node.next);
         }
 

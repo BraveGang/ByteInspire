@@ -1,4 +1,4 @@
-package org.problem;
+package org.problem.array;
 
 /**
  * 搜索旋转排序数组
