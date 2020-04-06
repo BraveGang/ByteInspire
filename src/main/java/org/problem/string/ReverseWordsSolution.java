@@ -14,14 +14,14 @@ public class ReverseWordsSolution {
     public static String reverseWords(String s) {
 
         String[] arrayStr = s.split(" ");
-        StringBuffer stringBuffer = new StringBuffer();
+        StringBuilder builder = new StringBuilder();
         for (int i = arrayStr.length - 1; i >= 0; i--) {
-            stringBuffer.append(arrayStr[i]);
+            builder.append(arrayStr[i]);
             if (i - 1 >= 0) {
-                stringBuffer.append(" ");
+                builder.append(" ");
             }
         }
-        return stringBuffer.toString();
+        return builder.toString();
     }
 
 
