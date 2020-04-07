@@ -26,7 +26,7 @@ public class ReverseListSolution {
 
     /**
      * 递归方式
-     *
+     * 递归是个逆向思维方式
      * @param head
      * @return
      */

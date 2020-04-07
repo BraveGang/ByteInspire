@@ -9,7 +9,7 @@ import java.util.Map;
  * 在无序数组中寻找两个出现奇数次的数：
  * 一个无序数组里有若干个整数，只有2个整数出现了奇数次，如何找到这2个出现奇数次的整数
  * <p>
- * 美团二面算法--这个是我自己的解法
+ * 美团二面算法--这个是我自己的解法、老铁们有啥更好的方法更新分享哈
  */
 public class FindLostNumSolution {
 
@@ -46,8 +46,10 @@ public class FindLostNumSolution {
             }
         }
 
+        //遍历Map
         for (Integer key : map.keySet()) {
             int count = map.get(key);
+            //判断出现奇数次数据
             if (count != 0 && (count & 1) != 0) {
                 list.add(key);
             }

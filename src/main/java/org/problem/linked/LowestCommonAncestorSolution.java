@@ -16,7 +16,7 @@ public class LowestCommonAncestorSolution {
 
     /**
      * 解法-递归
-     * 时间复杂度 logn - n
+     * 时间复杂度 logn ～ n
      * @param root
      * @param p
      * @param q

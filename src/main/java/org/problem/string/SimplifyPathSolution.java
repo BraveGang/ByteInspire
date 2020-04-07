@@ -10,6 +10,11 @@ public class SimplifyPathSolution {
 
     }
 
+    /**
+     * 正则表达式
+     * @param path
+     * @return
+     */
     public String simplifyPath(String path) {
 
         return null;

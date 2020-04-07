@@ -14,7 +14,7 @@ public class ProducerConsumer02 {
     private static Integer count = 0;
     private static final Integer FULL = 10;
 
-    //创建一个锁对象
+    //创建一个锁对象 可重入锁
     private Lock lock = new ReentrantLock();
     //创建两个条件变量，一个为缓冲区非满，一个为缓冲区非空
     private final Condition notFull = lock.newCondition();

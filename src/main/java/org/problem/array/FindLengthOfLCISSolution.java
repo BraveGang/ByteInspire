@@ -1,6 +1,7 @@
 package org.problem.array;
 
 /**
+ *
  * 最长连续递增序列
  * 给定一个未经排序的整数数组，找到最长且连续的的递增序列。
  *
@@ -42,9 +43,7 @@ public class FindLengthOfLCISSolution {
     }
 
     /**
-     *
-     * 快慢指针法
-     *
+     * 遍历计数
      * @param nums
      * @return
      */

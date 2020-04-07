@@ -37,28 +37,23 @@ public class BracketsMatchingSolution {
         if (s == null || s.length() == 0) {
             return null;
         }
-
         List<Integer> list = new ArrayList<>();
-
         int count = 0;
         int index = 0;
         char[] chars = s.toCharArray();
         Stack<Character> stack = new Stack<>();
         for (char aChar : chars) {
+            //右边括号位置深度 计数
             index++;
-
             if ('(' == aChar) {
                 stack.add(aChar);
             }
-
             if (')' == aChar && !stack.empty()) {
                 stack.pop();
                 count++;
                 list.add(index);
             }
-
         }
-
         return list;
     }
 

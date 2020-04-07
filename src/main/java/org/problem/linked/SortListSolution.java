@@ -48,10 +48,10 @@ public class SortListSolution {
 
         ListNode fast = head.next;
         ListNode slow = head;
-
-        while (fast.next != null) {
+        //快指针到队尾位置 慢指针到队列中位置
+        while (fast != null && fast.next != null) {
             slow = slow.next;
-            fast = fast.next;
+            fast = fast.next.next;
         }
 
         ListNode mid = slow.next;

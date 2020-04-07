@@ -18,47 +18,42 @@ public class RestoreIpAddressesSolution {
 
 
     /**
-     * 给定一个字符串、复原肯能的IP地址
-     * 暴力解法：三层循环遍历输出
      *
-     * @param s
+     * 给定一个字符串、复原可能的 IPv4 为例
+     * 暴力解法：三层嵌套循环输出
+     *
+     * @param ipStr
      * @return
      */
-    public static List<String> restoreIpAddresses(String s) {
+    public static List<String> restoreIpAddresses(String ipStr) {
 
-        int len = s.length();
+        int len = ipStr.length();
         if (len == 0 || len > 12) {
             return null;
         }
-
         List<String> result = new ArrayList<>();
-
         for (int i = 1; i < 4 && i < len - 2; i++) {
             for (int j = i + 1; j < i + 4 && j < len - 1; j++) {
                 for (int k = j + 1; k < j + 4 && k < len; k++) {
+                    //判断字符串 是否有剩余
                     if (len - k >= 4) {
-                        continue; //判断字符串 是否有剩余
+                        continue;
                     }
-
-                    int a = Integer.parseInt(s.substring(0, i));
-                    int b = Integer.parseInt(s.substring(i, j));
-                    int c = Integer.parseInt(s.substring(j, k));
-                    int d = Integer.parseInt(s.substring(k));
-
+                    int a = Integer.parseInt(ipStr.substring(0, i));
+                    int b = Integer.parseInt(ipStr.substring(i, j));
+                    int c = Integer.parseInt(ipStr.substring(j, k));
+                    int d = Integer.parseInt(ipStr.substring(k));
                     if (a > 255 || b > 255 || c > 255 || d > 255) {
                         continue;
                     }
-
                     String ip = a + "." + b + "." + c + "." + d;
-
                     if (ip.length() < len + 3)
                         continue;
-
                     result.add(ip);
-
                 }
             }
         }
+
         return result;
     }
 

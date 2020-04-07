@@ -24,7 +24,7 @@ public class MidNumSolution {
      *
      * 先排序 再取中位数量
      * 排序种类有很多，选一个就好，下面的是归并排序实现
-     *
+     * 注意：考虑数字长度奇偶数问题、偶数情况下的求均值策略
      * @param nums
      * @return
      */

@@ -17,17 +17,16 @@ public class LongestCommonPrefixSolution {
         if (strs.length == 0) {
             return "";
         }
-
-        String str = strs[0];
+        String prefix = strs[0];
         for (String s : strs) {
-            while (s.indexOf(str) != 0) {
-                str = str.substring(0, str.length() - 1);
-                if (str.length() == 0) {
+            while (s.indexOf(prefix) != 0) {
+                prefix = prefix.substring(0, prefix.length() - 1);
+                if (prefix.length() == 0) {
                     return "";
                 }
             }
         }
-        return str;
+        return prefix;
     }
 
 

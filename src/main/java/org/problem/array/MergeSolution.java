@@ -10,6 +10,11 @@ public class MergeSolution {
 
     }
 
+    /**
+     * 先排序、再合并重合区间
+     * @param intervals
+     * @return
+     */
     public int[][] merge(int[][] intervals) {
 
         return null;

@@ -52,7 +52,8 @@ public class MaxProfitSolution {
      */
     public static int maxProfit2(int[] prices) {
 
-        //解法二：动态规划法：用dp[i]表示第i天卖出的收益，则dp[i]=max(price[i]-min,maxProfit)
+        //解法二：动态规划法：用dp[i]表示第i天卖出的收益，
+        //则dp[i]=max(price[i]-min,maxProfit)
         //时间复杂度：O(n),空间复杂度：O(1)
         if (prices == null || prices.length == 0)
             return 0;

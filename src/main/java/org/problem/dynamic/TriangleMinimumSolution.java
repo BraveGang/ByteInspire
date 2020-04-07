@@ -15,7 +15,7 @@ public class TriangleMinimumSolution {
     }
 
     /**
-     * 自底向上 + 动态规划
+     * 自底向上思想 + 动态规划
      * @param triangle
      * @return
      */

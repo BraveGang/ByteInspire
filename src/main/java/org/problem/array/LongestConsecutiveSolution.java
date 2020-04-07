@@ -30,6 +30,7 @@ public class LongestConsecutiveSolution {
         }
         int longestStreak = 0;
         for (int num : num_set) {
+            //找出连续序列的起点
             if (!num_set.contains(num - 1)) {
                 int currentNum = num;
                 int currentStreak = 1;

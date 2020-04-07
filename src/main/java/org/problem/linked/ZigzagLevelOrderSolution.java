@@ -34,8 +34,8 @@ public class ZigzagLevelOrderSolution {
         if (root == null) {
             return new ArrayList<>();
         }
-        List<List<Integer>> results = new ArrayList<>();
 
+        List<List<Integer>> results = new ArrayList<>();
         LinkedList<TreeNode> node_queue = new LinkedList<>();
         node_queue.addLast(root);
         node_queue.addLast(null);

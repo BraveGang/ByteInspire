@@ -19,6 +19,7 @@ public class LengthOfLongestSubstringSolution {
 
     /**
      *  其中都是字符串
+     *  转化思想
      * @param s
      * @return
      */
@@ -27,7 +28,6 @@ public class LengthOfLongestSubstringSolution {
         int[] hash = new int[500];
         int max = 0;
         int i = 0, j = 0;
-
         while (i < s.length() && j < s.length()) {
             if (hash[s.charAt(j)] == 0) {
                 hash[s.charAt(j)] = 1;

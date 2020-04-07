@@ -12,12 +12,11 @@ public class MultiplySolution {
     }
 
     public static String multiply(String num1, String num2) {
-        
+
         int num11 = Integer.parseInt(num1);
         int num22 = Integer.parseInt(num2);
         int num33 = num11 * num22;
-        String str = String.valueOf(num33);
-        return str;
+        return String.valueOf(num33);
 
     }
 }

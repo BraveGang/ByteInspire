@@ -8,6 +8,7 @@ import java.util.Stack;
 
 /**
  * 从尾到头打印链表
+ * 链表特性的基础考察
  */
 public class PrintLinkedListFromTailToHead {
 
