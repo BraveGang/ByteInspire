@@ -8,7 +8,7 @@ public class InsertSortSolution {
 
     public static void main(String[] args) {
         int array[] = new int[]{2, 31, 4, 9, 21, 31, 88, 7};
-        insertSort2(array);
+        insertSort(array);
         for (int value : array) {
             System.out.println(value);
         }
@@ -19,41 +19,18 @@ public class InsertSortSolution {
         if (arr == null || arr.length < 2) {
             return arr;
         }
-
+        //优化写法，别上来就动不动来个两层for循环，low不low
         for (int i = 1; i < arr.length; i++) {
-            for (int j = i; j > 0; j--) {
-                if (arr[j] < arr[j - 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j - 1];
-                    arr[j - 1] = temp;
-                } else {
-                    break;
-                }
+            int key = arr[i];
+            int j = i - 1;
+            while (j > 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
             }
+            arr[j + 1] = key;
         }
         return arr;
     }
 
-    private static int[] insertSort2(int[] arr) {
-
-        if (arr == null || arr.length < 2) {
-            return arr;
-        }
-
-        for (int i = 1; i < arr.length; i++) {
-            int temp = arr[i];
-            int index = i;
-            for (int j = i; j > 0; j--) {
-                if (temp < arr[j - 1]) {
-                    arr[j] = arr[j - 1];
-                    index = j - 1;
-                } else {
-                    break;
-                }
-                arr[index] = temp;
-            }
-        }
-        return arr;
-    }
 
 }
