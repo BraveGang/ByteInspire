@@ -7,16 +7,8 @@ package org.problem.sort;
 public class MergeSortSolution {
 
     public static void main(String[] args) {
-
         int array[] = new int[]{2, 31, 4, 9, 21, 31, 88, 7};
-
-        int result[] = mergeSortDesc(array, 0, array.length - 1);
-
-        for (int value : array) {
-            System.out.println(value);
-        }
-
-        System.out.println("==========");
+        int result[] = mergeSort(array, 0, array.length - 1);
         for (int value : result) {
             System.out.println(value);
         }
@@ -24,22 +16,26 @@ public class MergeSortSolution {
     }
 
     /**
-     *
      * 默认为升序排列 ASC
+     * 请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列；
+     * 设定两个指针，最初位置分别为两个已经排序序列的起始位置；
+     * 比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置；
+     * 重复步骤 3 直到某一指针达到序列尾；
+     * 将另一序列剩下的所有元素直接复制到合并序列尾。
      *
-     * @param nums
-     * @param low
-     * @param high
+     * @param sourceArray
+     * @param left
+     * @param right
      * @return
      */
-    public static int[] mergeSort(int[] nums, int low, int high) {
+    public static int[] mergeSort(int[] sourceArray, int left, int right) {
 
-        if (low == high) {
-            return new int[]{nums[low]};
+        if (left == right) {
+            return new int[]{sourceArray[left]};
         }
-        int mid = low + (high - low) / 2;
-        int[] leftArr = mergeSort(nums, low, mid); //左有序数组
-        int[] rightArr = mergeSort(nums, mid + 1, high); //右有序数组
+        int mid = left + (right - left) / 2;
+        int[] leftArr = mergeSort(sourceArray, left, mid); //左有序数组
+        int[] rightArr = mergeSort(sourceArray, mid + 1, right); //右有序数组
         int[] newNum = new int[leftArr.length + rightArr.length]; //新有序数组
         int m = 0, i = 0, j = 0;
         while (i < leftArr.length && j < rightArr.length) {
@@ -58,19 +54,19 @@ public class MergeSortSolution {
     /**
      * 降序排列
      *
-     * @param nums
-     * @param low
-     * @param high
+     * @param sourceArray
+     * @param left
+     * @param right
      * @return
      */
-    public static int[] mergeSortDesc(int[] nums, int low, int high) {
+    public static int[] mergeSortDesc(int[] sourceArray, int left, int right) {
 
-        if (low == high) {
-            return new int[]{nums[low]};
+        if (left == right) {
+            return new int[]{sourceArray[left]};
         }
-        int mid = low + (high - low) / 2;
-        int[] leftArr = mergeSortDesc(nums, low, mid); //左有序数组
-        int[] rightArr = mergeSortDesc(nums, mid + 1, high); //右有序数组
+        int mid = left + (right - left) / 2;
+        int[] leftArr = mergeSortDesc(sourceArray, left, mid); //左有序数组
+        int[] rightArr = mergeSortDesc(sourceArray, mid + 1, right); //右有序数组
         int[] newNum = new int[leftArr.length + rightArr.length]; //新有序数组
         int m = 0, i = 0, j = 0;
         while (i < leftArr.length && j < rightArr.length) {
@@ -86,43 +82,5 @@ public class MergeSortSolution {
 
     }
 
-
-    //方法2
-    public static void mergeSort2(int[] arr) {
-        sort(arr, 0, arr.length - 1);
-    }
-
-    private static void sort(int[] arr, int L, int R) {
-        if (L == R) {
-            return;
-        }
-        int mid = L + ((R - L) >> 1);
-        sort(arr, L, mid);
-        sort(arr, mid + 1, R);
-        merge(arr, L, mid, R);
-    }
-
-    public static void merge(int[] arr, int L, int mid, int R) {
-        int[] temp = new int[R - L + 1];
-        int i = 0;
-        int p1 = L;
-        int p2 = mid + 1;
-        // 比较左右两部分的元素，哪个小，把那个元素填入temp中
-        while (p1 <= mid && p2 <= R) {
-            temp[i++] = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
-        }
-        // 上面的循环退出后，把剩余的元素依次填入到temp中
-        // 以下两个while只有一个会执行
-        while (p1 <= mid) {
-            temp[i++] = arr[p1++];
-        }
-        while (p2 <= R) {
-            temp[i++] = arr[p2++];
-        }
-        // 把最终的排序的结果复制给原数组
-        for (i = 0; i < temp.length; i++) {
-            arr[L + i] = temp[i];
-        }
-    }
 
 }

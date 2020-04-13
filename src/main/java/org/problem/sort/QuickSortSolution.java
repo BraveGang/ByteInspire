@@ -1,58 +1,61 @@
 package org.problem.sort;
 
 /**
- *
- * 快速排序
- * 时间复杂度：nlogn
- *
+ * 快速排序的最坏运行情况是 O(n²)，比如说顺序数列的快排。但它的平摊期望时间是 O(nlogn)，
+ * 且 O(nlogn) 记号中隐含的常数因子很小，比复杂度稳定等于 O(nlogn) 的归并排序要小很多。
+ * 所以，对绝大多数顺序性较弱的随机数列而言，快速排序总是优于归并排序。
  */
 public class QuickSortSolution {
 
     public static void main(String[] args) {
 
-        int array[] = new int[]{2, 31, 4, 9, 21, 31, 88, 7, 10, 6, 11};
-        quickSort(array, 0, array.length - 1);
-        for (int value : array) {
+        int[] arrays = new int[]{2, 31, 4, 9, 21, 31, 88, 7, 10, 6, 11};
+        int[] result = quickSort(arrays, 0, arrays.length - 1);
+        for (int value : result) {
             System.out.println(value);
         }
 
     }
 
-    private static void quickSort(int[] arr, int low, int high) {
-
-        if (low < high) {
-            // 找寻基准数据的正确索引
-            int index = getIndex(arr, low, high);
-            // 进行迭代对index之前和之后的数组进行相同的操作使整个数组变成有序
-            quickSort(arr, 0, index);
-            quickSort(arr, index + 1, high);
+    /**
+     * 从数列中挑出一个元素，称为 "基准"（pivot）;
+     * 重新排序数列，所有元素比基准值小的摆放在基准前面，所有元素比基准值大的摆在基准的后面（相同的数可以到任一边）。在这个分区退出之后，该基准就处于数列的中间位置。这个称为分区（partition）操作；
+     * 递归地（recursive）把小于基准值元素的子数列和大于基准值元素的子数列排序；
+     */
+    public static int[] quickSort(int[] sourceArray, int left, int right) {
+        if (left < right) {
+            int partitionIndex = partition(sourceArray, left, right);
+            quickSort(sourceArray, left, partitionIndex - 1);
+            quickSort(sourceArray, partitionIndex + 1, right);
         }
-
+        return sourceArray;
     }
 
-    private static int getIndex(int[] arr, int low, int high) {
-        // 基准数据
-        int tmp = arr[low];
-        while (low < high) {
-            // 当队尾的元素大于等于基准数据时,向前挪动high指针
-            while (low < high && arr[high] >= tmp) {
-                high--;
+    /**
+     * 基准值
+     *
+     * @param arr
+     * @param left
+     * @param right
+     * @return
+     */
+    private static int partition(int[] arr, int left, int right) {
+        int pivot = left;
+        int index = pivot + 1;
+        for (int i = index; i <= right; i++) {
+            if (arr[i] < arr[pivot]) {
+                swap(arr, i, index);
+                index++;
             }
-            // 如果队尾元素小于tmp了,需要将其赋值给low
-            arr[low] = arr[high];
-            // 当队首元素小于等于tmp时,向前挪动low指针
-            while (low < high && arr[low] <= tmp) {
-                low++;
-            }
-            // 当队首元素大于tmp时,需要将其赋值给high
-            arr[high] = arr[low];
-
         }
+        swap(arr, pivot, index - 1);
+        return index - 1;
+    }
 
-        // 跳出循环时low和high相等,此时的low或high就是tmp的正确索引位置
-        // 由原理部分可以很清楚的知道low位置的值并不是tmp,所以需要将tmp赋值给arr[low]
-        arr[low] = tmp;
-        return low; // 返回tmp的正确位置
+    private static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
 }

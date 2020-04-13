@@ -8,7 +8,7 @@ import org.helper.ListNode;
  * 如：L1{ 5 -> 6 -> 2 -> 3 -> 7}， L2 { 9 -> 5}
  * 和为： 56237+95 = 56332，需要自己创建链表结构
  *
- * 头面面试题：我跟你说，头条特别喜欢考察链表相关的
+ * 字节跳动面试题：我跟你说，头条特别喜欢考察链表相关的
  */
 public class AddTwoNumbers2Solution {
 
